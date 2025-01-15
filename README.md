@@ -69,9 +69,9 @@ qsub analysis/merge-array.bash
 
 ### Merging arrays
 
-- merging imputed arrays, vcf output in ```merged``` directory
+- Merging imputed arrays, vcf output in ```merged``` directory
 
-- in the merging process, duplicate sample names get a reformated
+- In the merging process, duplicate sample names get a reformated
   sample ID: <array>:<barcode>, e.g. 4:47781 in this case participant
   47781 on array 4 (gsa) is a duplicate from another
   array. Participants with non-standard 5-digit barcode IDs get
@@ -83,9 +83,9 @@ for i in {1..22}; do qsub -v chr=${i} -N merge_umich_chr${i} analysis/process-um
 
 ### Reformatting genotypes
 
-- assign them chromosome-and-position-based IDs to variants with missing variant IDs 
+- Assigning position-allele-based IDs to variants with missing variant IDs 
 
-- variants (indels) with position-allele based ID and allele length > 25bp are assigned the unnamed-variant ID
+- Variants (indels) with position-allele based ID and allele length > 25bp are assigned the unnamed-variant ID
 
 - Running as batch jobs with one job per chromosome 
 
@@ -102,7 +102,7 @@ for i in {1..22}; do qsub -v chr=${i} -N merge_umich_chr${i} analysis/process-um
 
 - Imputation on NHLBI topmed imputation server https://imputation.biodatacatalyst.nhlbi.nih.gov
 
-  - r3 version of the panel
+  - panel version r3 
   - missmatch control vs topmed population
   - eagle phasing
   - rsq 0.3 filter
